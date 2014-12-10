@@ -6,6 +6,12 @@ final int INTROSTORY  = 1;
 
 final int MENU        = 2;
 
+final int NEWGAME     = 3;
+
+final int HELP        = 4;
+
+final int EXIT        = 5;
+
 int state = TITLESCREEN; 
 
 
@@ -104,6 +110,34 @@ void draw() {
 
 
     break;
+    
+  
+  
+  case NEWGAME:
+    
+    // put code for newgame in here
+    // ps. big error will execute if no code
+    
+  break;
+    
+  
+  
+  
+  case HELP:
+    
+    // put code for help in here
+    // ps. big error will execute if no code
+  
+  break;
+  
+  
+  case EXIT:
+  
+    exit();
+  
+  break;
+    
+  
 
 
 
@@ -126,9 +160,9 @@ void draw() {
 
 
 void keyPressed() {
+  
 
-
-
+  
   switch (state) {
 
 
@@ -157,7 +191,10 @@ void keyPressed() {
 
   case MENU:
 
-    // 
+    if(keyCode == '1'){state = NEWGAME;} //---------------------//
+    if(keyCode == '2'){state = HELP;}    // Yours truly Oscar124//
+    if(keyCode == '3'){state = EXIT;}    //---------------------//
+
 
     break;
 
