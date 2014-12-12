@@ -20,6 +20,8 @@ int pageNumber=0;  // for the story
 
 PFont fontIntro; 
 
+PImage book;
+
 
 
 void setup() {
@@ -28,6 +30,8 @@ void setup() {
 
   background(20);
 
+  book = loadImage("book.png");//Rywes
+  
   // primary font
 
   fontIntro = createFont ("Andalus", 22);
@@ -74,16 +78,18 @@ void draw() {
     background(20);
 
     textAlign(LEFT);
+    
+    image(book,0,0);
 
     textFont(fontIntro);
 
     String[] pages=introStory();
+    
+    fill(0);
 
     text(pages[pageNumber], 
 
     57, 25, width-57*2, height-6);
-
-    showFourStars();
 
     break;
 
@@ -91,15 +97,15 @@ void draw() {
 
   case MENU:
 
+fill(183, 146, 13);
+
     background(20);
 
     textAlign(CENTER);
 
     textFont(fontIntro);
 
-    text("Game Menu", 
-
-    16, 34, width-16*2, height-16*2);
+    text("Game Menu", 16, 34, width-16*2, height-16*2);
 
     textAlign(LEFT);
 
@@ -223,8 +229,6 @@ void showFourStars() {
   textAlign(LEFT);
 
   textSize(64);
-
-
 
   text("*", 26, 66);
 
