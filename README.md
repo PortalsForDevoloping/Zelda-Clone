@@ -4,8 +4,9 @@ This is a group project with seven members: RywesTech, Chrisir, Caramazula, ross
 
 
 
-Fyi
+User info
 -----------------------------
-Oscar124:
-Mostly bugfixing & searching.
+
+Oscar124: Mostly bugfixing & searching.
+
 -----------------------------
