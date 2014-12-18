@@ -8,5 +8,5 @@ Fyi
 -----------------------------
 Oscar124:
 Mostly bugfixing & searching.
-(And some small stuff)
+And some small stuff
 -----------------------------
