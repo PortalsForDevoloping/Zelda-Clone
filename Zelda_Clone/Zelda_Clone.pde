@@ -65,12 +65,12 @@ void draw() {
     
   case NEWGAME:
     // put code for newgame in here
-    // ps. big error will execute if no code
+    // ps. will break and execute big error if no code
   break;
   
   case HELP:
     // put code for help in here
-    // ps. big error will execute if no code
+    // ps. will break and execute big error if no code
   break;
   
   case EXIT:
@@ -107,6 +107,7 @@ void keyPressed() {
 
   default:
     println ("big error 1262 / unknown state");
+    state = MENU;
     break;
   }// switch
 } // func
