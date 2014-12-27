@@ -16,6 +16,9 @@ PImage book;
  
 void setup() {
   size(880, 600);
+  if (frame != null) {
+    frame.setResizable(true);
+  }
   background(20);
  
   book = loadImage("book.png");//Rywes
@@ -56,7 +59,7 @@ void draw() {
   case  INTROSTORY:
     background(20);
     textAlign(LEFT);
-    image(book, 0, 0);
+    image(book, 0, 0,width, height);
     textFont(fontIntro);
     String[] pages=introStory();
     fill(0);
@@ -205,4 +208,3 @@ String[] introStory() {
  
   return (page);
 }
-//
