@@ -76,9 +76,12 @@ void draw() {
 
   case MENU:
      background(20);
-     if(i < 15092){
-       image(panorama,i,0, 15092, height);
-       i= i - 1;
+     if(i < -15092){
+       image(panorama,i,0, 15092, height + 10);
+       i= i + 10;
+     }else if(i > -15092){
+       image(panorama,i,0, 15092, height + 10);
+       i= i - 10;
      }
     fill(183, 146, 13);
     textAlign(CENTER);
