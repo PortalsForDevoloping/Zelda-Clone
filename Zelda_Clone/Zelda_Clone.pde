@@ -5,6 +5,7 @@ final int MENU        = 2;
 final int NEWGAME     = 3;
 final int HELP        = 4;
 final int EXIT        = 5;
+final int CREDITS     = 6;
 int state = MENU; 
 
 int pageNumberMAX=0;  // for the story
@@ -23,6 +24,10 @@ import ddf.minim.signals.*;
 import ddf.minim.*;
 Minim minim;
 AudioPlayer s1;
+
+//For the credits
+int nameX=440;
+int nameY=height/2;
 
 // -------------------------------------------------
 
@@ -113,6 +118,7 @@ void draw() {
     image(button, width / 2 - 190, 200,380,50);
     image(button, width / 2 - 190, 270,380,50);
     image(button, width / 2 - 190, 340,380,50);
+    image(button, width/2-190, 410,380,50);
     
     if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 200 && mouseY <= 250){
       fill(130,65,20,50);
@@ -136,6 +142,14 @@ void draw() {
         exit();
       }
     }
+    else if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 410 && mouseY <= 460){
+      fill(130,65,20,50);
+      stroke(0);
+      rect(width / 2 - 190, 410, 379, 48);
+      if(mousePressed){
+        state= CREDITS;
+      }
+    }
     
     
     fill(183, 146, 13);
@@ -143,6 +157,7 @@ void draw() {
     text("New Game", width / 2, 235);
     text("Introduction", width / 2, 305);
     text("Exit", width /2, 375);
+    text("Credits",width/2,450);
     
     break;
 
@@ -159,6 +174,12 @@ void draw() {
   case EXIT:
     exit();
     break;
+    
+  case CREDITS:
+  background(20);
+  showFourStars();
+  names();
+  break;
 
   default:
     println ("big error 1234 / unknown state");
@@ -208,6 +229,22 @@ void showFourStars() {
   text("*", 26, height-36);
   text("*", width-26*2, 66);
   text("*", width-26*2, height-36);
+}
+
+void names(){
+      textFont(fontIntro);
+      textSize(50);
+      textAlign(CENTER);
+      text("Thank You To:",nameX,nameY);
+      text("Chief of Management: Rywes Tech",nameX,nameY+height);
+      text("Chief Technology Officer: Chrisir",nameX,nameY+height*2);
+      text("Programming Abroad Specialists:",nameX,nameY+height*3);
+      text("Tlecoz, Caramazula, Oscar1234",nameX,nameY+height*3+50);
+      text("Music: Chief of Operations TechWiz777",nameX,nameY+height*4);
+      text("Portals: World Wide Developing",nameX,nameY+height*5);
+      nameY-=2;
+      if(nameY<=-3000)
+        state= MENU;
 }
 
 String[] introStory() {
