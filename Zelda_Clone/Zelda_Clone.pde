@@ -9,13 +9,12 @@ int state = MENU;
 
 int pageNumberMAX=0;  // for the story
 int pageNumber=0;  // for the story
+int imgPlace;
 PFont fontIntro;
 
 PImage book;
 PImage panorama;
 PImage button;
-
-int i = 0;
 
 // -------------------------------------------------
 
@@ -79,13 +78,13 @@ void draw() {
 
   case MENU:
     background(20);
-    if (i < -15092) {
-      image(panorama, i, 0, 15092, height + 30);
-      i= i + 1;
+    if (imgPlace < -15092) {
+      image(panorama, imgPlace, 0, 15092, height + 30);
+      imgPlace = imgPlace + 1;
     }
-    if (i > -15092) {
-      image(panorama, i, 0, 15092, height + 30);
-      i= i - 1;
+    if (imgPlace > -15092) {
+      image(panorama, imgPlace, 0, 15092, height + 30);
+      imgPlace = imgPlace - 1;
     }
     
     fill(183, 146, 13);
