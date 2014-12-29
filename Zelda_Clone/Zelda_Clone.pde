@@ -44,6 +44,7 @@ void setup() {
 void draw() {
 
   switch (state) {
+    
   case TITLESCREEN:
     background(20);
     textFont(fontIntro);
@@ -100,6 +101,31 @@ void draw() {
     image(button, width / 2 - 190, 270,380,50);
     image(button, width / 2 - 190, 340,380,50);
     
+    if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 200 && mouseY <= 250){
+      fill(130,65,20,50);
+      stroke(0);
+      rect(width / 2 - 190, 200, 379, 48);
+      if(mousePressed){
+        state = NEWGAME;
+      }
+    }else if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 270 && mouseY <= 320){
+      fill(130,65,20,50);
+      stroke(0);
+      rect(width / 2 - 190, 270, 379, 48);
+      if(mousePressed){
+        state = INTROSTORY;
+      }
+    }else if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 340 && mouseY <= 390){
+      fill(130,65,20,50);
+      stroke(0);
+      rect(width / 2 - 190, 340, 379, 48);
+      if(mousePressed){
+        exit();
+      }
+    }
+    
+    
+    fill(183, 146, 13);
     textSize(35);
     text("New Game", width / 2, 235);
     text("Intro Story", width / 2, 305);
