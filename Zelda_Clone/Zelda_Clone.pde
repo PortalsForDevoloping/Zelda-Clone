@@ -97,6 +97,10 @@ void draw() {
     text ("The Adventures of Tran", 16, 100, width-16*2, height-16*2);
     //text ("of Tran", 16, 140,width-16*2, height-16*2);
     
+    image(button, width / 2 - 190, 200,380,50);
+    image(button, width / 2 - 190, 270,380,50);
+    image(button, width / 2 - 190, 340,380,50);
+    
     break;
 
   case NEWGAME:
