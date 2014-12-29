@@ -240,7 +240,9 @@ void names(){
       text("Chief Technology Officer: Chrisir",nameX,nameY+height*2);
       text("Programming Abroad Specialists:",nameX,nameY+height*3);
       text("Tlecoz, Caramazula, Oscar1234",nameX,nameY+height*3+50);
+      textSize(45);
       text("Music: Chief of Operations TechWiz777",nameX,nameY+height*4);
+      textSize(50);
       text("Portals: World Wide Developing",nameX,nameY+height*5);
       nameY-=2;
       if(nameY<=-3000)
