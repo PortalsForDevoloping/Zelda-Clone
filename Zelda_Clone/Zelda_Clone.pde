@@ -13,6 +13,7 @@ PFont fontIntro;
 
 PImage book;
 PImage panorama;
+PImage button;
 
 int i = 0;
 
@@ -27,6 +28,7 @@ void setup() {
 
   book = loadImage("book.png");//Rywes
   panorama = loadImage("panorama.jpg");
+  button = loadImage("button.png");
 
   fontIntro = createFont ("Andalus", 22); // primary font
 
@@ -77,11 +79,11 @@ void draw() {
   case MENU:
     background(20);
     if (i < -15092) {
-      image(panorama, i, 0, 15092, height + 10);
+      image(panorama, i, 0, 15092, height + 30);
       i= i + 1;
     }
     if (i > -15092) {
-      image(panorama, i, 0, 15092, height + 10);
+      image(panorama, i, 0, 15092, height + 30);
       i= i - 1;
     }
     fill(183, 146, 13);
