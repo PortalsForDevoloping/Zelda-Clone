@@ -90,13 +90,11 @@ void draw() {
     textFont(fontIntro);
     textSize(64);
     textAlign(CENTER);
-    text ("Dragon Child", 16, 93, width-16*2, height-16*2);
-    textSize(42);
-    text ("The Adventures\nof Tran", 16, 243, width-16*2, height-16*2);
+    text ("Dragon Child", 16, 20, width-16*2, height-16*2);
+    textSize(35);
+    text ("The Adventures of Tran", 16, 100, width-16*2, height-16*2);
+    //text ("of Tran", 16, 140,width-16*2, height-16*2);
     
-    textAlign(LEFT);
-    text("1. New Game \n 2. Help \n 3. Exit ", 
-    256, 110, width-16*2, height-16);
     break;
 
   case NEWGAME:
