@@ -16,6 +16,14 @@ PImage book;
 PImage panorama;
 PImage button;
 
+//song composed and played by TechWiz777
+
+import ddf.minim.spi.*;
+import ddf.minim.signals.*;
+import ddf.minim.*;
+Minim minim;
+AudioPlayer s1;
+
 // -------------------------------------------------
 
 void setup() {
@@ -36,6 +44,15 @@ void setup() {
 
   textFont(fontIntro);
   fill(183, 146, 13);
+  
+   minim= new Minim(this);
+  s1= minim.loadFile("BalladoftheDragonChild.wav");
+  if(s1==null)
+  println(" ERROR SNE777: Song not found, ask TechWiz777 for file");
+  
+  s1.play();
+  s1.loop();
+  
 } // func
 
 
@@ -127,7 +144,7 @@ void draw() {
     fill(183, 146, 13);
     textSize(35);
     text("New Game", width / 2, 235);
-    text("Intro Story", width / 2, 305);
+    text("Introduction", width / 2, 305);
     text("Exit", width /2, 375);
     
     break;
