@@ -5,7 +5,7 @@ final int MENU        = 2;
 final int NEWGAME     = 3;
 final int HELP        = 4;
 final int EXIT        = 5;
-int state = TITLESCREEN; 
+int state = MENU; 
 
 int pageNumberMAX=0;  // for the story
 int pageNumber=0;  // for the story
@@ -86,20 +86,24 @@ void draw() {
       image(panorama, i, 0, 15092, height + 30);
       i= i - 1;
     }
+    
     fill(183, 146, 13);
-    textAlign(CENTER);
-
     textFont(fontIntro);
     textSize(64);
     textAlign(CENTER);
     text ("Dragon Child", 16, 20, width-16*2, height-16*2);
-    textSize(35);
+    textSize(38);
     text ("The Adventures of Tran", 16, 100, width-16*2, height-16*2);
     //text ("of Tran", 16, 140,width-16*2, height-16*2);
     
     image(button, width / 2 - 190, 200,380,50);
     image(button, width / 2 - 190, 270,380,50);
     image(button, width / 2 - 190, 340,380,50);
+    
+    textSize(35);
+    text("New Game", width / 2, 235);
+    text("Intro Story", width / 2, 305);
+    text("Exit", width /2, 375);
     
     break;
 
