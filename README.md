@@ -10,3 +10,7 @@ User info
 Oscar124: Mostly bugfixing & searching.
 
 -----------------------------
+
+RywesTech: COM (Cheif Opperations Manager)
+
+-----------------------------
