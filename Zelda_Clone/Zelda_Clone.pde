@@ -45,7 +45,7 @@ void setup() {
   textFont(fontIntro);
   fill(183, 146, 13);
   
-   minim= new Minim(this);
+     minim= new Minim(this);
   s1= minim.loadFile("BalladoftheDragonChild.wav");
   if(s1==null)
   println(" ERROR SNE777: Song not found, ask TechWiz777 for file");
@@ -87,10 +87,8 @@ void draw() {
     textFont(fontIntro);
     String[] pages=introStory();
     fill(0);
-    text(pages[pageNumber], 
-    57, 25, width/2-32*2, height-44);
-    text(pages[pageNumber+1], 
-    width/2+32, 25, width/2-64, height-44);
+    text(pages[pageNumber], 57, 25, width/2-32*2, height-44);
+    text(pages[pageNumber+1], width/2+32, 25, width/2-64, height-44);
     break;
 
   case MENU:
@@ -111,7 +109,6 @@ void draw() {
     text ("Dragon Child", 16, 20, width-16*2, height-16*2);
     textSize(38);
     text ("The Adventures of Tran", 16, 100, width-16*2, height-16*2);
-    //text ("of Tran", 16, 140,width-16*2, height-16*2);
     
     image(button, width / 2 - 190, 200,380,50);
     image(button, width / 2 - 190, 270,380,50);
@@ -134,7 +131,7 @@ void draw() {
     }else if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 340 && mouseY <= 390){
       fill(130,65,20,50);
       stroke(0);
-      rect(width / 2 - 190, 340, 379, 48);
+      rect(width / 2 - 190, 340, 379, 49);
       if(mousePressed){
         exit();
       }
@@ -203,9 +200,6 @@ void keyPressed() {
     break;
   }// switch
 } // func
-
-// ---------------------------------------------------
-// Misc
 
 void showFourStars() {
   textAlign(LEFT);
