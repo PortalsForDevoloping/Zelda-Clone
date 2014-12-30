@@ -6,6 +6,7 @@ final int NEWGAME     = 3;
 final int HELP        = 4;
 final int EXIT        = 5;
 final int CREDITS     = 6;
+final int GAMESTATS   = 7;
 int state = MENU; 
 
 int pageNumberMAX=0;  // for the story
@@ -25,7 +26,7 @@ import ddf.minim.spi.*;
 import ddf.minim.signals.*;
 import ddf.minim.*;
 Minim minim;
-AudioPlayer s1;
+AudioPlayer s1,s2;
 
 //For the credits
 int nameX=440;
@@ -69,11 +70,16 @@ void setup() {
     println(" ERROR 002: Song not found, ask TechWiz777 for file or download from GitHub");
     errorCount = errorCount + 1;
   }
-
+ s2=minim.loadFile("TransLullaby.wav");
+  if(s2==null){
+    println("ERROR 003: Song not found, ask TechWiz777 for file or download from Github");
+    errorCount= errorCount  + 1;
+  }
   s1.play();
   s1.loop();
+  
+  println("\nSetup took " + millis() / 1000 + " second(s).\n\n");
 
-  print("Found " + errorCount + " error(s)!\nSetup took " + millis() / 1000 + " second(s).\n\n");
 } // func
 
 
@@ -135,6 +141,7 @@ void draw() {
     image(button, width / 2 - 190, 270, 380, 50);
     image(button, width / 2 - 190, 340, 380, 50);
     image(button, width/2-190, 410, 380, 50);
+    image(button, width/2-190, 480, 380, 50);
 
     if (mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 200 && mouseY <= 250) {
       fill(130, 65, 20, 50);
@@ -164,7 +171,15 @@ void draw() {
       if (mousePressed) {
         state= CREDITS;
       }
+    } else if (mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 480 && mouseY <= 530) {
+      fill(130, 65, 20, 50);
+      stroke(0);
+      rect(width / 2 - 190, 480, 379, 49);
+      if (mousePressed) {
+        state= GAMESTATS ;
+      }
     }
+
 
 
     fill(183, 146, 13);
@@ -172,7 +187,8 @@ void draw() {
     text("New Game", width / 2, 235);
     text("Introduction", width / 2, 305);
     text("Exit", width /2, 375);
-    text("Credits", width/2, 450);
+    text("Credits", width/2, 445);
+    text("Game Statistics",width/2,520);
 
     break;
 
@@ -191,17 +207,40 @@ void draw() {
     break;
 
   case CREDITS:
+  s1.pause();
+  s2.play();
     background(20);
     showFourStars();
     names();
     break;
-
-  default:
+    
+  
+  case GAMESTATS:
+   background(20);
+   showFourStars();
+   textSize(50);
+   textAlign(CENTER);
+   text("Found " + errorCount + " error(s)!",width/2,60);
+   text("Press any key to exit Game Statistics",width/2,height-50);
+   if(errorCount<=0){
+     text("Your game is good to go!",width/2,120);
+   }
+   else if(errorCount>=1){
+     textAlign(LEFT);
+     textSize(25);
+     text("Uh Oh. There's a problem. Check for a message error. If problem persists, email our company at: portalswwd@gmail.com", 10, 120);
+   }
+   if(keyPressed){
+   state=MENU;
+   }
+   break;
+   
+   default:
     println ("Error 003");
     exit();
     break;
   }// switch
-} // func 
+}// func 
 
 // -------------------------------------------------------
 
@@ -238,6 +277,7 @@ void keyPressed() {
     break;
   }// switch
 } // func
+
 
 void showFourStars() {
   textAlign(LEFT);
