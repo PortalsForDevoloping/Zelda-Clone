@@ -1,6 +1,6 @@
 001: Font Not found. Instal font by finding “Andalus.ttf” in sketch folder
 002: Song not found, ask TechWiz777 for file or download from GitHub
-003:
+003: Unknown state
 004:
 005:
 006:

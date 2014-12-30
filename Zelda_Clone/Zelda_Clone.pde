@@ -46,26 +46,26 @@ void setup() {
 
   fontIntro = createFont ("Andalus", 22); // primary font
 
-  if (fontIntro==null){ // secondary font (if not found)
+  if (fontIntro==null) { // secondary font (if not found)
     fontIntro = createFont ("Arial", 22);
     print("Error: 001");
     errorCount = errorCount + 1;
   }
-  
+
   textFont(fontIntro);
   fill(183, 146, 13);
-  
+
   minim= new Minim(this);
   s1= minim.loadFile("BalladoftheDragonChild.wav");
-  if(s1==null){
+  if (s1==null) {
     println(" ERROR 002: Song not found, ask TechWiz777 for file or download from GitHub");
     errorCount = errorCount + 1;
   }
-  
+
   s1.play();
   s1.loop();
-  
-  print("Found " + errorCount + " errors!");
+
+  print("Found " + errorCount + " error(s)!\nSetup took " + millis() / 1000 + " second(s).\n\n");
 } // func
 
 
@@ -73,7 +73,7 @@ void setup() {
 void draw() {
 
   switch (state) {
-    
+
   case TITLESCREEN:
     background(20);
     textFont(fontIntro);
@@ -114,7 +114,7 @@ void draw() {
       image(panorama, imgPlace, 0, 15092, height + 30);
       imgPlace = imgPlace - 1;
     }
-    
+
     fill(183, 146, 13);
     textFont(fontIntro);
     textSize(64);
@@ -122,51 +122,50 @@ void draw() {
     text ("Dragon Child", 16, 20, width-16*2, height-16*2);
     textSize(38);
     text ("The Adventures of Tran", 16, 100, width-16*2, height-16*2);
-    
-    image(button, width / 2 - 190, 200,380,50);
-    image(button, width / 2 - 190, 270,380,50);
-    image(button, width / 2 - 190, 340,380,50);
-    image(button, width/2-190, 410,380,50);
-    
-    if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 200 && mouseY <= 250){
-      fill(130,65,20,50);
+
+    image(button, width / 2 - 190, 200, 380, 50);
+    image(button, width / 2 - 190, 270, 380, 50);
+    image(button, width / 2 - 190, 340, 380, 50);
+    image(button, width/2-190, 410, 380, 50);
+
+    if (mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 200 && mouseY <= 250) {
+      fill(130, 65, 20, 50);
       stroke(0);
-      rect(width / 2 - 190, 200, 379, 48);
-      if(mousePressed){
+      rect(width / 2 - 190, 200, 379, 49);
+      if (mousePressed) {
         state = NEWGAME;
       }
-    }else if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 270 && mouseY <= 320){
-      fill(130,65,20,50);
+    } else if (mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 270 && mouseY <= 320) {
+      fill(130, 65, 20, 50);
       stroke(0);
-      rect(width / 2 - 190, 270, 379, 48);
-      if(mousePressed){
+      rect(width / 2 - 190, 270, 379, 49);
+      if (mousePressed) {
         state = INTROSTORY;
       }
-    }else if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 340 && mouseY <= 390){
-      fill(130,65,20,50);
+    } else if (mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 340 && mouseY <= 390) {
+      fill(130, 65, 20, 50);
       stroke(0);
       rect(width / 2 - 190, 340, 379, 49);
-      if(mousePressed){
+      if (mousePressed) {
         exit();
       }
-    }
-    else if(mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 410 && mouseY <= 460){
-      fill(130,65,20,50);
+    } else if (mouseX >= width / 2 - 190 && mouseX <= width / 2 + 190 && mouseY >= 410 && mouseY <= 460) {
+      fill(130, 65, 20, 50);
       stroke(0);
-      rect(width / 2 - 190, 410, 379, 48);
-      if(mousePressed){
+      rect(width / 2 - 190, 410, 379, 49);
+      if (mousePressed) {
         state= CREDITS;
       }
     }
-    
-    
+
+
     fill(183, 146, 13);
     textSize(35);
     text("New Game", width / 2, 235);
     text("Introduction", width / 2, 305);
     text("Exit", width /2, 375);
-    text("Credits",width/2,450);
-    
+    text("Credits", width/2, 450);
+
     break;
 
   case NEWGAME:
@@ -182,12 +181,12 @@ void draw() {
   case EXIT:
     exit();
     break;
-    
+
   case CREDITS:
-  background(20);
-  showFourStars();
-  names();
-  break;
+    background(20);
+    showFourStars();
+    names();
+    break;
 
   default:
     println ("big error 1234 / unknown state");
@@ -224,7 +223,7 @@ void keyPressed() {
     break;
 
   default:
-    println ("big error 1262 / unknown state");
+    println ("Error 003");
     state = MENU;
     break;
   }// switch
@@ -239,22 +238,22 @@ void showFourStars() {
   text("*", width-26*2, height-36);
 }
 
-void names(){
-      textFont(fontIntro);
-      textSize(50);
-      textAlign(CENTER);
-      text("Thank You To:",nameX,nameY);
-      text("Chief of Management: Rywes Tech",nameX,nameY+height);
-      text("Chief Technology Officer: Chrisir",nameX,nameY+height*2);
-      text("Programming Abroad Specialists:",nameX,nameY+height*3);
-      text("Tlecoz, Caramazula, Oscar1234",nameX,nameY+height*3+50);
-      textSize(45);
-      text("Music: Chief of Operations TechWiz777",nameX,nameY+height*4);
-      textSize(50);
-      text("Portals: World Wide Developing",nameX,nameY+height*5);
-      nameY-=2;
-      if(nameY<=-3000)
-        state= MENU;
+void names() {
+  textFont(fontIntro);
+  textSize(50);
+  textAlign(CENTER);
+  text("Thank You To:", nameX, nameY);
+  text("Chief of Management: Rywes Tech", nameX, nameY+height);
+  text("Chief Technology Officer: Chrisir", nameX, nameY+height*2);
+  text("Programming Abroad Specialists:", nameX, nameY+height*3);
+  text("Tlecoz, Caramazula, Oscar1234", nameX, nameY+height*3+50);
+  textSize(45);
+  text("Music: Chief of Operations TechWiz777", nameX, nameY+height*4);
+  textSize(50);
+  text("Portals: World Wide Developing", nameX, nameY+height*5);
+  nameY-=2;
+  if (nameY<=-3000)
+    state= MENU;
 }
 
 String[] introStory() {
