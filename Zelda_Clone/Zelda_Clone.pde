@@ -31,13 +31,21 @@ AudioPlayer s1;
 int nameX=440;
 int nameY=height/2;
 
+boolean sketchFullScreen(){
+    return false;
+  }
 // -------------------------------------------------
 
 void setup() {
-  size(880, 600);
+  if(sketchFullScreen() == true){
+    size(displayWidth,displayHeight);
+  }else{
+    size(880, 600);
+  }
   if (frame != null) {
     frame.setResizable(true);
   }
+  
   background(20);
 
   book = loadImage("book.png");//Rywes
@@ -71,7 +79,6 @@ void setup() {
 
 
 void draw() {
-
   switch (state) {
 
   case TITLESCREEN:
