@@ -13,6 +13,8 @@ int pageNumber=0;  // for the story
 int imgPlace;
 PFont fontIntro;
 
+int errorCount = 0;
+
 PImage book;
 PImage panorama;
 PImage button;
@@ -44,20 +46,26 @@ void setup() {
 
   fontIntro = createFont ("Andalus", 22); // primary font
 
-  if (fontIntro==null) // secondary font (if not found)
-    fontIntro = createFont ("Arial", 22); 
-
+  if (fontIntro==null){ // secondary font (if not found)
+    fontIntro = createFont ("Arial", 22);
+    print("Error: 001");
+    errorCount = errorCount + 1;
+  }
+  
   textFont(fontIntro);
   fill(183, 146, 13);
   
-     minim= new Minim(this);
+  minim= new Minim(this);
   s1= minim.loadFile("BalladoftheDragonChild.wav");
-  if(s1==null)
-  println(" ERROR SNE777: Song not found, ask TechWiz777 for file");
+  if(s1==null){
+    println(" ERROR 002: Song not found, ask TechWiz777 for file or download from GitHub");
+    errorCount = errorCount + 1;
+  }
   
   s1.play();
   s1.loop();
   
+  print("Found " + errorCount + " errors!");
 } // func
 
 
