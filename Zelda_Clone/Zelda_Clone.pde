@@ -94,6 +94,7 @@ void draw() {
     break;
 
   case  INTROSTORY:
+    
     background(20);
     textAlign(LEFT);
     image(book, 0, 0, width, height);
@@ -189,7 +190,7 @@ void draw() {
     break;
 
   default:
-    println ("big error 1234 / unknown state");
+    println ("Error 003");
     exit();
     break;
   }// switch
@@ -204,10 +205,12 @@ void keyPressed() {
     break;
 
   case INTROSTORY:
-    if (pageNumber<pageNumberMAX-2)
+    if (pageNumber<pageNumberMAX-2){
       pageNumber+=2;
-    else
+  }else{
       state = MENU;
+      pageNumber = 0;
+    }
     break;
 
   case MENU:
@@ -244,16 +247,18 @@ void names() {
   textAlign(CENTER);
   text("Thank You To:", nameX, nameY);
   text("Chief of Management: Rywes Tech", nameX, nameY+height);
-  text("Chief Technology Officer: Chrisir", nameX, nameY+height*2);
-  text("Programming Abroad Specialists:", nameX, nameY+height*3);
-  text("Tlecoz, Caramazula, Oscar1234", nameX, nameY+height*3+50);
+  text("Chief Technology Officer: Chrisir", nameX, nameY+height*1.5);
+  text("Programming Abroad Specialists:", nameX, nameY+height*2);
+  text("Tlecoz, Caramazula, Oscar1234", nameX, nameY+height*2+50);
   textSize(45);
-  text("Music: Chief of Operations TechWiz777", nameX, nameY+height*4);
+  text("Music: Chief of Operations TechWiz777", nameX, nameY+height*2.7);
   textSize(50);
-  text("Portals: World Wide Developing", nameX, nameY+height*5);
+  text("Portals: World Wide Developing", nameX, nameY+height*3.2);
   nameY-=2;
-  if (nameY<=-3000)
+  if (nameY<=-1900){
     state= MENU;
+    nameY = 0;
+  }
 }
 
 String[] introStory() {
