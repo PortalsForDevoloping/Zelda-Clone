@@ -7,10 +7,10 @@ This is a group project with seven members: RywesTech, Chrisir, Caramazula, ross
 User info
 -----------------------------
 
-Oscar124: Mostly bugfixing & searching.
+Oscar124: Developing of android version.
 
 -----------------------------
 
-RywesTech: COM (Cheif Opperations Manager)
+RywesTech: COM (Cheif Operations Manager)
 
 -----------------------------

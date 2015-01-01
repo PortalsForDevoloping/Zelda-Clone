@@ -296,7 +296,7 @@ void names() {
   text("Chief of Management: Rywes Tech", nameX, nameY+height);
   text("Chief Technology Officer: Chrisir", nameX, nameY+height*1.5);
   text("Programming Abroad Specialists:", nameX, nameY+height*2);
-  text("Tlecoz, Caramazula, Oscar1234", nameX, nameY+height*2+50);
+  text("Tlecoz, Caramazula, Oscar124", nameX, nameY+height*2+50);
   textSize(45);
   text("Music: Chief of Operations TechWiz777", nameX, nameY+height*2.7);
   textSize(50);
@@ -369,4 +369,3 @@ String[] introStory() {
 
   return (page);
 }
-
