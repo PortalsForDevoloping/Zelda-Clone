@@ -6,7 +6,7 @@ final int NEWGAME     = 3;
 final int HELP        = 4;
 final int EXIT        = 5;
 final int CREDITS     = 6;
-final int GAMESTATS   = 7;
+final int ERRORCHECKS   = 7;
 int state = MENU; 
 
 int pageNumberMAX=0;  // for the story
@@ -176,7 +176,7 @@ void draw() {
       stroke(0);
       rect(width / 2 - 190, 480, 379, 49);
       if (mousePressed) {
-        state= GAMESTATS ;
+        state= ERRORCHECKS;
       }
     }
 
@@ -188,7 +188,7 @@ void draw() {
     text("Introduction", width / 2, 305);
     text("Exit", width /2, 375);
     text("Credits", width/2, 445);
-    text("Game Statistics",width/2,520);
+    text("Error Check",width/2,520);
 
     break;
 
@@ -215,13 +215,13 @@ void draw() {
     break;
     
   
-  case GAMESTATS:
+  case ERRORCHECKS:
    background(20);
    showFourStars();
    textSize(50);
    textAlign(CENTER);
    text("Found " + errorCount + " error(s)!",width/2,60);
-   text("Press any key to exit Game Statistics",width/2,height-50);
+   text("Press any key to exit Error Checks",width/2,height-50);
    if(errorCount<=0){
      text("Your game is good to go!",width/2,120);
    }
