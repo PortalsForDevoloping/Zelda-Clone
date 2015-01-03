@@ -78,7 +78,7 @@ void setup() {
   s1.play();
   s1.loop();
   
-  println("\nSetup took " + millis() / 1000 + " second(s).\n\n");
+  println("\nSetup took " + millis() / 1000.0 + " second(s).\n\n");
 
 } // func
 
